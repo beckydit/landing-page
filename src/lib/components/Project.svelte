@@ -1,12 +1,13 @@
 <script>
     import Icon from "./Icon.svelte";
-
     const { data: project } = $props();
 </script>
 
 <article>
     <div class="thumbnail">
-        <div class="veil"></div>
+        <div class="veil">
+            <span class="hover-text">Vedi Progetto</span>
+        </div>
         <img src={project.thumbnail} alt={project.title} />
     </div>
 
@@ -27,13 +28,12 @@
         display: flex;
         flex-direction: column;
         gap: var(--size-2);
-        cursor: default; /* Cambiato da pointer a default poiché non è cliccabile */
+        cursor: default;
 
         &:hover {
             .veil {
                 opacity: 1;
             }
-
             .arrow {
                 transform: translateY(0);
             }
@@ -47,14 +47,24 @@
 
         .veil {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: var(--color-link);
-            mix-blend-mode: soft-light;
-
-            transition: opacity 0.75s var(--ease-out-quart);
-            opacity: 0;
+            inset: 0;
+            background-color: var(--hex-brand-800);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             z-index: 1;
+            
+            /* Transizione rapida e secca */
+            transition: opacity 0.2s ease-in-out; 
+            opacity: 0;
+        }
+
+        .hover-text {
+            color: var(--hex-neutral-50);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            /* Nessun movimento, appare e basta insieme al velo */
         }
 
         img {
@@ -76,14 +86,14 @@
         display: flex;
         align-items: center;
         gap: var(--size-2);
-
         span {
             color: var(--color-ink-secondary);
         }
     }
 
     .arrow {
-        transition: transform 0.75s var(--ease-out-quart);
+        /* La freccia mantiene il suo movimento fluido caratteristico */
+        transition: transform 0.6s var(--ease-out-quart);
         transform: translateY(100%);
     }
 </style>

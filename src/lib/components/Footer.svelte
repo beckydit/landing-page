@@ -1,5 +1,5 @@
 <script>
-	import polimi from "$lib/assets/polimi.png";
+	import polimi from "$lib/assets/poliminero.png";
 </script>
 
 <footer class="safe-area">

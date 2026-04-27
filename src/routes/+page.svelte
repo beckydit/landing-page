@@ -14,7 +14,8 @@
 
 <section class="safe-area hero">
 	<h1>
-		the flowers are
+		selected design projects <br />
+		from my studies at polimi. <br />
 	</h1>
 </section>
 
@@ -30,7 +31,6 @@
 	{/each}
 </section>
 
-<div style="background: var(--color-link); padding: 20px;">Prova Colore</div>
 
 <style>
 	.hero {

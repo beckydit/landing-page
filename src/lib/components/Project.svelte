@@ -47,19 +47,24 @@
         aspect-ratio: 16/10;
         overflow: hidden;
 
-        .veil {
-            position: absolute;
-            inset: 0;
-            background-color: var(--hex-brand-800);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            
-            /* Transizione rapida e secca */
-            transition: opacity 0.2s ease-in-out; 
-            opacity: 0;
-        }
+    .veil {
+        position: absolute;
+        inset: 0;
+        
+        /* Qui riportiamo il colore brand originale */
+        /* Puoi usare --hex-brand-500 per il rosa classico */
+        /* O --color-link se vuoi che segua il tema */
+        background-color: var(--hex-brand-600); 
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        
+        /* Manteniamo la transizione rapida che abbiamo deciso */
+        transition: opacity 0.2s ease-in-out; 
+        opacity: 0;
+    }
 
         .hover-text {
         color: var(--hex-neutral-50);

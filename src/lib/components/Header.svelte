@@ -3,7 +3,7 @@
 </script>
 
 <header class="safe-area">
-	<Link title="in my garden" ref="/" />
+	<Link title=".indd" ref="/" />
 
 	<nav>
 		<Link

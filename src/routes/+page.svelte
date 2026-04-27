@@ -14,7 +14,7 @@
 
 <section class="safe-area hero">
 	<h1>
-		What do the flowers mean?.
+		the flowers are sleeping. 
 	</h1>
 </section>
 

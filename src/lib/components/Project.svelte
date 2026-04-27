@@ -5,11 +5,13 @@
 
 <article>
     <div class="thumbnail">
-        <div class="veil">
-            <span class="hover-text">Vedi Progetto</span>
-        </div>
-        <img src={project.thumbnail} alt={project.title} />
+    <div class="veil">
+        <span class="hover-text">
+            {project.description || "Vedi Progetto"}
+        </span>
     </div>
+    <img src={project.thumbnail} alt={project.title} />
+</div>
 
     <header>
         <hgroup>
@@ -60,11 +62,13 @@
         }
 
         .hover-text {
-            color: var(--hex-neutral-50);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            /* Nessun movimento, appare e basta insieme al velo */
+        color: var(--hex-neutral-50);
+        font-size: var(--size-4); /* Puoi provare size-3 se le descrizioni sono lunghe */
+        font-weight: 500;
+        text-transform: none; /* Forse meglio evitare il tutto maiuscolo per le descrizioni lunghe */
+        padding-inline: var(--size-4); /* Evita che il testo tocchi i bordi della card */
+        line-height: 1.4;
+        max-width: 20ch; /* Limita la larghezza per una lettura migliore */
         }
 
         img {

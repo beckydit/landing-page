@@ -1,6 +1,5 @@
 :root {
 	--font-primary:   "Rowan", serif;
-	--font-secondary: "Satoshi",   sans-serif;
 
 	font-feature-settings: "liga" 1, "calt" 1;
 }

@@ -1,102 +1,89 @@
 <script>
-	import Icon from "./Icon.svelte";
+    import Icon from "./Icon.svelte";
 
-	const { data: project } = $props();
+    const { data: project } = $props();
 </script>
 
-{#if project.link}
-	<a href={project.link} target="_blank">
-		{@render card(project)}
-	</a>
-{:else}
-	{@render card(project)}
-{/if}
+<article>
+    <div class="thumbnail">
+        <div class="veil"></div>
+        <img src={project.thumbnail} alt={project.title} />
+    </div>
 
-{#snippet card(project)}
-	<article>
-		<div class="thumbnail">
-			{#if project.link}
-				<div class="veil"></div>
-			{/if}
-			<img src={project.thumbnail} alt={project.title} />
-		</div>
+    <header>
+        <hgroup>
+            <h3>{project.title}</h3>
+            <span>/ {project.year}</span>
+        </hgroup>
 
-		<header>
-			<hgroup>
-				<h3>{project.title}</h3>
-				<span>/ {project.year}</span>
-			</hgroup>
-
-			{#if project.link}
-				<div class="arrow">
-					<Icon name="arrow-up-right" />
-				</div>
-			{/if}
-		</header>
-	</article>
-{/snippet}
+        <div class="arrow">
+            <Icon name="arrow-up-right" />
+        </div>
+    </header>
+</article>
 
 <style>
-	article {
-		display: flex;
-		flex-direction: column;
-		gap: var(--size-2);
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-2);
+        cursor: default; /* Cambiato da pointer a default poiché non è cliccabile */
 
-		&:hover {
-			.veil {
-				opacity: 1;
-			}
+        &:hover {
+            .veil {
+                opacity: 1;
+            }
 
-			.arrow {
-				transform: translateY(0);
-			}
-		}
-	}
+            .arrow {
+                transform: translateY(0);
+            }
+        }
+    }
 
-	.thumbnail {
-		position: relative;
-		aspect-ratio: 16/10;
-		overflow: hidden;
+    .thumbnail {
+        position: relative;
+        aspect-ratio: 16/10;
+        overflow: hidden;
 
-		.veil {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			background-color: var(--color-link);
-			mix-blend-mode: soft-light;
+        .veil {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-link);
+            mix-blend-mode: soft-light;
 
-			transition: opacity 0.75s var(--ease-out-quart);
-			opacity: 0;
-		}
+            transition: opacity 0.75s var(--ease-out-quart);
+            opacity: 0;
+            z-index: 1;
+        }
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 
-	header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: var(--size-4);
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--size-4);
+        overflow: clip;
+    }
 
-		overflow: clip;
-	}
+    hgroup {
+        display: flex;
+        align-items: center;
+        gap: var(--size-2);
 
-	hgroup {
-		display: flex;
-		align-items: center;
-		gap: var(--size-2);
+        span {
+            color: var(--color-ink-secondary);
+        }
+    }
 
-		span {
-			color: var(--color-ink-secondary);
-		}
-	}
-
-	.arrow {
-		transition: transform 0.75s var(--ease-out-quart);
-		transform: translateY(100%);
-	}
+    .arrow {
+        transition: transform 0.75s var(--ease-out-quart);
+        transform: translateY(100%);
+    }
 </style>

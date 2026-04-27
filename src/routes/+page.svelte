@@ -14,7 +14,7 @@
 
 <section class="safe-area hero">
 	<h1>
-		the flowers are sleeping. 
+		the flowers are
 	</h1>
 </section>
 
@@ -29,6 +29,8 @@
 		<Project data={project.data} />
 	{/each}
 </section>
+
+<div style="background: var(--color-link); padding: 20px;">Prova Colore</div>
 
 <style>
 	.hero {

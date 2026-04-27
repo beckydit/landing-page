@@ -15,13 +15,9 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 
-	<!-- Satoshi Font -->
+	<!-- Rowan Font -->
 	<link rel="preconnect" href="https://api.fontshare.com/" />
 	<link href="https://api.fontshare.com/v2/css?f[]=rowan@400&display=swap" rel="stylesheet"/>
-
-	<!-- Inter Font -->
-	<link rel="preconnect" href="https://rsms.me/" />
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 </svelte:head>
 
 <Header />

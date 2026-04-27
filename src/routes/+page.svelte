@@ -14,10 +14,7 @@
 
 <section class="safe-area hero">
 	<h1>
-		This archive collects the best outcomes of the Web Design Laboratory in
-		Communication Design, Politecnico di Milano. The laboratory is directed by
-		Umberto Tolino, Christian Mazzoleni, Francesco di Gioia and Tommaso Negri
-		with love.
+		What do the flowers mean?.
 	</h1>
 </section>
 

@@ -1,5 +1,4 @@
 <script>
-    import Icon from "./Icon.svelte";
     const { data: project } = $props();
 </script>
 
@@ -18,10 +17,6 @@
             <h3>{project.title}</h3>
             <span>/ {project.year}</span>
         </hgroup>
-
-        <div class="arrow">
-            <Icon name="arrow-up-right" />
-        </div>
     </header>
 </article>
 
@@ -35,9 +30,6 @@
         &:hover {
             .veil {
                 opacity: 1;
-            }
-            .arrow {
-                transform: translateY(0);
             }
         }
     }
@@ -98,11 +90,5 @@
         span {
             color: var(--color-ink-secondary);
         }
-    }
-
-    .arrow {
-        /* La freccia mantiene il suo movimento fluido caratteristico */
-        transition: transform 0.6s var(--ease-out-quart);
-        transform: translateY(100%);
     }
 </style>

@@ -22,13 +22,12 @@
 
         &:hover {
             background-color: var(--color-filter--hover);
-            color: var(--color-ink); /* Leggermente più chiaro all'hover */
+            color: var(--color-ink);
         }
 
-        /* Quando l'input radio è selezionato */
         &:has(input:checked) {
             background-color: var(--color-filter--selected);
-            color: var(--hex-neutral-50); /* L'anno diventa bianco */
+            color: var(--hex-neutral-50);
         }
     }
 
@@ -38,6 +37,6 @@
     }
 
     input {
-        display: none; /* Nascondiamo il pallino del radio button */
+        display: none;
     }
 </style>

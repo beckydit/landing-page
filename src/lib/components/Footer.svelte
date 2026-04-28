@@ -22,7 +22,7 @@
         transition: opacity 0.5s var(--ease-out-quart);
     }
 
-    /* --- LOGICA DI VISUALIZZAZIONE --- */
+
 
     /* DEFAULT (DARK MODE) */
     .logo-on-light {

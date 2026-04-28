@@ -50,7 +50,6 @@
 
     nav {
         display: flex;
-        /* Aumentato il gap per staccare il toggle dal link instagram */
         gap: var(--size-10); 
         align-items: center;
     }
@@ -61,7 +60,6 @@
         display: inline-block;
         width: 38px;
         height: 20px;
-        /* Un piccolo margine extra a destra per sicurezza */
         margin-right: var(--size-2); 
     }
 
@@ -104,7 +102,6 @@
         background-color: white;
     }
 
-    /* Hover effetto */
     .switch:hover .slider {
         border-color: var(--color-ink);
     }

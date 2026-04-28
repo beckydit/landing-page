@@ -42,10 +42,6 @@
     .veil {
         position: absolute;
         inset: 0;
-        
-        /* Qui riportiamo il colore brand originale */
-        /* Puoi usare --hex-brand-500 per il rosa classico */
-        /* O --color-link se vuoi che segua il tema */
         background-color: var(--hex-brand-600); 
         
         display: flex;
@@ -53,19 +49,18 @@
         justify-content: center;
         z-index: 1;
         
-        /* Manteniamo la transizione rapida che abbiamo deciso */
         transition: opacity 0.2s ease-in-out; 
         opacity: 0;
     }
 
         .hover-text {
         color: var(--hex-neutral-50);
-        font-size: var(--size-4); /* Puoi provare size-3 se le descrizioni sono lunghe */
+        font-size: var(--size-4);
         font-weight: 500;
-        text-transform: none; /* Forse meglio evitare il tutto maiuscolo per le descrizioni lunghe */
-        padding-inline: var(--size-4); /* Evita che il testo tocchi i bordi della card */
+        text-transform: none;
+        padding-inline: var(--size-4);
         line-height: 1.4;
-        max-width: 20ch; /* Limita la larghezza per una lettura migliore */
+        max-width: 20ch;
         }
 
         img {

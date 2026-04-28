@@ -38,7 +38,6 @@
         position: relative;
         padding-bottom: 4px;
         
-        /* Usiamo la tua transizione della card per il colore */
         transition: color 0.75s var(--ease-out-quart);
 
         &::after {
@@ -50,7 +49,7 @@
             height: 2px;
             background-color: var(--color-link);
             
-            /* Animazione della linea con la tua libreria */
+            /* Animazione della linea */
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 0.75s var(--ease-out-quart);
@@ -62,19 +61,18 @@
                 transform-origin: left;
             }
 
-            /* Caso senza icone */
+            /* Link senza icone */
             &:not(.has-icons) {
                 color: var(--color-link);
             }
 
-            /* Caso con icone: le stelle diventano rosa */
+            /* Link con icone */
             &.has-icons :global(i) {
                 color: var(--color-link);
             }
         }
     }
 
-    /* Coerenza totale: anche le icone usano la tua curva quart */
     :global(i) {
         transition: color 0.75s var(--ease-out-quart);
     }

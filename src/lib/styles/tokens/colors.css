@@ -1,5 +1,4 @@
-:root {
-    /* 1. PALETTE HEX COMPLETA (Sempre disponibili) */
+:root {*/
     --hex-brand-100: #F9DEE0;
     --hex-brand-200: #F3C0C8;
     --hex-brand-300: #DC96A9;
@@ -22,7 +21,7 @@
     --hex-neutral-900: #040404;
 }
 
-/* 2. ASSEGNAZIONE VARIABILI DINAMICHE (Default: DARK) */
+/* Default: DARK */
 html {
     --color-canvas: var(--hex-neutral-900);
     --color-surface: var(--hex-neutral-800);
@@ -38,7 +37,7 @@ html {
     color-scheme: dark;
 }
 
-/* 3. TEMA LIGHT (Si attiva con data-theme="light") */
+/* LIGHT */
 html[data-theme="light"] {
     --color-canvas: var(--hex-neutral-50);
     --color-surface: var(--hex-neutral-100);

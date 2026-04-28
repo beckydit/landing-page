@@ -4,7 +4,6 @@
 
     let theme = $state('dark');
 
-    // Funzione per applicare il tema in modo sicuro
     const applyTheme = (newTheme) => {
         theme = newTheme;
         if (typeof document !== 'undefined') {
@@ -25,22 +24,19 @@
 </script>
 
 <header class="safe-area">
-    <Link 
-        title=".indd" 
-        ref="/" 
-        leadingIcon="star" 
-        trailingIcon="star" 
-    />
+    <Link title=".indd" ref="/" leadingIcon="star" trailingIcon="star" />
 
     <nav>
-        <button type="button" onclick={toggleTheme} class="theme-toggle">
-            {theme === 'dark' ? 'LIGHT' : 'DARK'}
-        </button>
+        <label class="switch" aria-label="Cambia tema">
+            <input 
+                type="checkbox" 
+                checked={theme === 'light'} 
+                onchange={toggleTheme} 
+            />
+            <span class="slider"></span>
+        </label>
 
-        <Link
-            title="@kyouuuka"
-            ref="https://www.instagram.com/kyouuuka"
-        />
+        <Link title="@kyouuuka" ref="https://www.instagram.com/kyouuuka" />
     </nav>
 </header>
 
@@ -48,36 +44,68 @@
     header {
         padding-block: var(--size-6);
         display: flex;
-        gap: var(--size-8);
         justify-content: space-between;
         align-items: center;
     }
 
     nav {
         display: flex;
-        gap: var(--size-6);
+        /* Aumentato il gap per staccare il toggle dal link instagram */
+        gap: var(--size-10); 
         align-items: center;
     }
 
-    .theme-toggle {
-        /* Reset stili bottone */
-        background: transparent;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        
-        /* Typography */
-        font-family: var(--font-primary);
-        font-size: var(--size-3);
-        font-weight: 500;
-        text-transform: uppercase;
-        
-        /* Colore dinamico che usa i tuoi token */
-        color: var(--color-ink-secondary);
-        transition: color 0.3s var(--ease-out-quart);
+    /* Struttura del Toggle */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 38px;
+        height: 20px;
+        /* Un piccolo margine extra a destra per sicurezza */
+        margin-right: var(--size-2); 
     }
 
-    .theme-toggle:hover {
-        color: var(--color-ink);
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: transparent;
+        border: 1px solid var(--color-ink-secondary);
+        transition: 0.4s var(--ease-out-quart);
+        border-radius: 20px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        left: 3px;
+        bottom: 3px;
+        background-color: var(--color-ink-secondary);
+        transition: 0.4s var(--ease-out-quart);
+        border-radius: 50%;
+    }
+
+    /* Quando il tema è Light */
+    input:checked + .slider {
+        background-color: var(--color-link);
+        border-color: var(--color-link);
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(18px);
+        background-color: white;
+    }
+
+    /* Hover effetto */
+    .switch:hover .slider {
+        border-color: var(--color-ink);
     }
 </style>

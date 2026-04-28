@@ -8,9 +8,11 @@
         leadingIcon = null,
         trailingIcon = null,
     } = $props();
+
+    const hasIcons = $derived(leadingIcon || trailingIcon);
 </script>
 
-<a href={ref}>
+<a href={ref} class:has-icons={hasIcons}>
     {#if children}
         {@render children()}
     {:else}
@@ -30,27 +32,50 @@
     a {
         display: inline-flex;
         align-items: center;
-        gap: var(--size-1);
+        gap: var(--size-2);
         text-decoration: none;
-        
-        /* Il colore del testo rimane quello base */
         color: var(--color-ink);
+        position: relative;
+        padding-bottom: 4px;
         
-        /* Applichiamo la transizione globale per sicurezza */
-        transition: color 0.3s var(--ease-out-quart);
+        /* Usiamo la tua transizione della card per il colore */
+        transition: color 0.75s var(--ease-out-quart);
 
-        /* Quando passi il mouse sul link, l'icona interna cambia colore */
-        &:hover :global(i) {
-            color: var(--color-link);
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-link);
+            
+            /* Animazione della linea con la tua libreria */
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.75s var(--ease-out-quart);
+        }
+
+        &:hover {
+            &::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            /* Caso senza icone */
+            &:not(.has-icons) {
+                color: var(--color-link);
+            }
+
+            /* Caso con icone: le stelle diventano rosa */
+            &.has-icons :global(i) {
+                color: var(--color-link);
+            }
         }
     }
 
-    /* Stile per l'icona (tag <i> generato da Phosphor) */
+    /* Coerenza totale: anche le icone usano la tua curva quart */
     :global(i) {
-        transition: color 0.3s var(--ease-out-quart);
-    }
-
-    .link-text {
-        /* Il testo non cambia colore, quindi non serve transition qui */
+        transition: color 0.75s var(--ease-out-quart);
     }
 </style>

@@ -38,6 +38,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/images/projects/2024/spakka.png" | "/images/projects/2025/flatfade.png" | "/images/projects/2025/unmasqed.png" | "/robots.txt" | string & {};
+		Asset(): "/.DS_Store" | "/images/.DS_Store" | "/images/projects/.DS_Store" | "/images/projects/2024/cloe.png" | "/images/projects/2024/standby.png" | "/images/projects/2025/ctrl.png" | "/images/projects/2025/dagger.png" | "/images/projects/2025/packard.png" | "/robots.txt" | string & {};
 	}
 }
